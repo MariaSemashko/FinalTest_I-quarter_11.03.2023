@@ -54,7 +54,29 @@ void PrintArray(string[] array)
     Console.WriteLine();
 }
 
+string[] GetNewArray (string[] array)
+{
+
+    string result = String.Empty;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3) 
+        {
+            result = result + "," + array[i];
+        }
+
+    }
+    
+    string[] resultArray = result.Split(",");
+
+    return resultArray;
+
+}
+
 int initialArrayLength = GetNumber("Введите длину исходного массива: ");
 string[] initialArray = InitArray(initialArrayLength);
 Console.WriteLine();
 PrintArray(initialArray);
+Console.WriteLine();
+string[] newArray = GetNewArray(initialArray);
+PrintArray(newArray);
